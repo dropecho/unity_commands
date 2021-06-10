@@ -7,6 +7,8 @@
   "repository": "github:dropecho/unity_commands",
   "license": "MIT",
   "dependencies": {
-    "com.dropecho.common": "https://github.com/dropecho/unity_common.git"
+    "com.dropecho.utils": "0.3.0",
+    "com.dropecho.common": "0.1.0",
+    "com.unity.multiplayer.mlapi": "0.1.0"
   }
 }

@@ -3,7 +3,7 @@ using MLAPI;
 using UnityEngine;
 
 namespace Dropecho {
-  public class CommandProcessor : NetworkBehaviour {
+  public class NetworkCommandProcessor : NetworkBehaviour {
     Queue<ICommand> _commands = new Queue<ICommand>();
     ICommand _current = null;
 

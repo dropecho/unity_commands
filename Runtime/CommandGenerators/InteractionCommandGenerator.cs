@@ -1,18 +1,6 @@
 using UnityEngine;
 
 namespace Dropecho {
-  public class InteractionCommand : ICommand {
-    Interactor _interactor;
-    private readonly Interactable _interactable;
-
-    public bool isFinished => true;
-
-    public InteractionCommand(Interactor interactor, Interactable interactable) {
-      _interactor = interactor;
-      _interactable = interactable;
-    }
-    public void Execute() => _interactable.Interact(_interactor);
-  }
 
   public class InteractionCommandGenerator : MonoBehaviour, ICommandGenerator {
     [SerializeField] KeyCode _button = KeyCode.F;
@@ -29,11 +17,11 @@ namespace Dropecho {
         _interactor = entity.GetComponent<Interactor>();
       }
       // Disable previous component.
-      _hit.DisableComponent<Outline>();
+      // _hit.DisableComponent<Outline>();
 
       if (Physics.Raycast(GetInteractionRay(), out _hit, _interactionDistance, _interactionMask)) {
         var interactable = _hit.GetComponent<Interactable>();
-        _hit.EnableComponent<Outline>();
+        // _hit.EnableComponent<Outline>();
 
         if (Input.GetKeyDown(_button) && interactable?.CheckInteraction(_interactor) == true) {
           return new InteractionCommand(_interactor, interactable);
