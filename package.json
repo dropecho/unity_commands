@@ -1,0 +1,12 @@
+{
+  "name": "com.dropecho.commands",
+  "version": "0.1.0",
+  "displayName": "Dropecho Commands",
+  "description": "A set of components to allow command generation and parsing.",
+  "author": "vantreeseba <vantreeseba@gmail.com>",
+  "repository": "github:dropecho/unity_commands",
+  "license": "MIT",
+  "dependencies": {
+    "com.dropecho.common": "0.1.0"
+  }
+}
