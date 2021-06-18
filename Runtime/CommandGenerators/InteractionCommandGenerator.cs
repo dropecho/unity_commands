@@ -16,12 +16,12 @@ namespace Dropecho {
       if (_interactor == null) {
         _interactor = entity.GetComponent<Interactor>();
       }
-      // Disable previous component.
-      // _hit.DisableComponent<Outline>();
+
+      // _hit.GetComponent<Interactable>()?.DeFocus();
 
       if (Physics.Raycast(GetInteractionRay(), out _hit, _interactionDistance, _interactionMask)) {
         var interactable = _hit.GetComponent<Interactable>();
-        // _hit.EnableComponent<Outline>();
+        // interactable.Focus(_interactor);
 
         if (Input.GetKeyDown(_button) && interactable?.CheckInteraction(_interactor) == true) {
           return new InteractionCommand(_interactor, interactable);

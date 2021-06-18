@@ -13,7 +13,8 @@ namespace Dropecho {
     }
 
     public void Execute() {
-      _entity.GetComponent<ICharacterController>().Move(_direction);
+      _entity.GetComponent<ICharacterController>()?.Move(_direction);
+      // _entity.GetComponent<CharacterController>()?.Move(_direction * Time.deltaTime);
       if (_entity.gameObject.HasComponent<NavMeshAgent>()) {
         _entity.GetComponent<NavMeshAgent>().nextPosition = _entity.transform.position;
         _entity.GetComponent<NavMeshAgent>().destination = _entity.transform.position;
